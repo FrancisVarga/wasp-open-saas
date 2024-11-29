@@ -8,13 +8,15 @@
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "module": "NodeNext",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
         "noEmit": true,
         "lib": [
             "ES2023"
-        ],
+        ]
     },
     "include": [
-        "main.wasp.ts"
+        "main.wasp.ts",
+        "wasp_modules/**/*.ts"
     ]
 }
