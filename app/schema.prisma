@@ -5,8 +5,15 @@ datasource db {
 
 generator client {
   provider        = "prisma-client-js"
-  output          = "src/generated/prisma/client"
   previewFeatures = ["postgresqlExtensions", "prismaSchemaFolder"]
+}
+
+model Info {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  title       String
+  description String
 }
 
 model User {
@@ -97,7 +104,7 @@ model PageViewSource {
 }
 
 model Logs {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
 
   message String
